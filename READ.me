@@ -1,0 +1,14 @@
+To find the process id (PID) associated with the port
+
+⇒ lsof -i tcp:3000 
+COMMAND PID   USER  FD  TYPE DEVICE             SIZE/OFF NODE NAME 
+node    44475 chen5 31u IPv4 0x8b1721168764e4bf 0t0 TCP *:strexec-s (LISTEN)
+
+Then to kill the process
+
+kill -9 44475
+
+Use -9 option to make sure the process dies immediately
+If you get permissions errors, you may need to use the sudo keyword, for example:
+
+sudo kill -9 44475
